@@ -1,0 +1,33 @@
+<h1>Product List</h1>
+<div class='table-responsive'>
+  <table class='table'>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+<!--    <tr *ngFor="let product of products;">-->
+<!--      <td>{{product.productID}}</td>-->
+<!--      <td><a [routerLink]="['detail',product.productID]">{{product.name}} </a> </td>-->
+<!--      <td>{{product.price}}</td>-->
+<!--    </tr>-->
+<tr *ngFor="let product of products;">
+  <td><a [routerLink]="['/product/view',product.productID]">{{product.name}}</a></td>
+  <td>{{product.price}}</td>
+  <td><a [routerLink]="['/product/view',product.productID]">View</a></td>
+  <td><a [routerLink]="['/product/edit',product.productID]">Edit</a></td>
+</tr>
+    </tbody>
+  </table>
+</div>
+
+<!--<h1>Product Page</h1>-->
+
+<!--<p>Current Page No <strong> {{pageNo}} </strong></p>-->
+<!--<p>snapshot Page No  <strong> {{ snapshotPageNo }} </strong></p>-->
+
+<!--<button (click)="nextPage()">Next Page</button>-->
+<router-outlet></router-outlet>
